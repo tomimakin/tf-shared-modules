@@ -2,7 +2,6 @@
 resource "aws_db_instance" "postgresql_db" {
   auto_minor_version_upgrade = true
   copy_tags_to_snapshot      = true
-  engine_lifecycle_support   = "open-source-rds-extended-support-disabled"
   maintenance_window         = "Sat:00:00-Sat:03:00"
   max_allocated_storage      = 100
   allocated_storage    = 10

@@ -4,22 +4,22 @@ resource "aws_s3_bucket" "s3_bucket" {
     tags   = var.tags
 }
 
-resource "aws_s3_bucket_lifecycle_configuration" "lifecycle_config" {
-  bucket = aws_s3_bucket.s3_bucket.id
+# resource "aws_s3_bucket_lifecycle_configuration" "lifecycle_config" {
+#   bucket = aws_s3_bucket.s3_bucket.id
 
-  rule {
-    id = "bucket-rule"
+#   rule {
+#     id = "bucket-rule"
 
-    status = "Enabled"
-    abort_incomplete_multipart_upload {
-        days_after_initiation = 7
-    }
-  }
-}
+#     status = "Enabled"
+#     abort_incomplete_multipart_upload {
+#         days_after_initiation = 7
+#     }
+#   }
+# }
 
-resource "aws_s3_bucket_versioning" "versioning_config" {
-  bucket = aws_s3_bucket.s3_bucket.id
-  versioning_configuration {
-    status = "Enabled"
-  }
-}
+# resource "aws_s3_bucket_versioning" "versioning_config" {
+#   bucket = aws_s3_bucket.s3_bucket.id
+#   versioning_configuration {
+#     status = "Enabled"
+#   }
+# }
