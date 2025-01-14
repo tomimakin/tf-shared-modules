@@ -30,3 +30,7 @@ resource "aws_lambda_function" "lambda" {
     }
     depends_on = [aws_s3_bucket.artifacts_bucket]
 }
+
+resource "aws_s3_bucket" "artifacts_bucket" {
+    bucket = "lambda-artifacts"
+}
