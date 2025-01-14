@@ -28,4 +28,5 @@ resource "aws_lambda_function" "lambda" {
     environment {
         variables = var.env_vars
     }
+    depends_on = [aws_s3_bucket.artifacts_bucket]
 }

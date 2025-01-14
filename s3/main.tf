@@ -1,3 +1,7 @@
+resource "aws_s3_bucket" "artifacts_bucket" {
+    bucket = "lambda-artifacts"
+}
+
 resource "aws_s3_bucket" "s3_bucket" {
     bucket = var.bucket_name
 
